@@ -10,7 +10,7 @@ const cadeiras = [
     {
         cadeira: "283085589467648",
         turno: "SDis23L07",
-        required: 1,
+        required: 4,
     }
 ];
 
@@ -23,7 +23,7 @@ async function scanCadeiras() {
             }
 
             const shift = response.data.shifts.filter(shift => shift.name === cadeira.turno)[0];
-
+            console.log(`[${new Date().toLocaleString()}] ${cadeira.turno} - ${shift.enrolments.current}/${shift.enrolments.maximum}`)
             if (shift.enrolments.current + cadeira.required <= shift.enrolments.maximum) {
                 sendWarning(cadeira.turno, shift.enrolments.current, shift.enrolments.maximum);
             }
