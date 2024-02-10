@@ -10,7 +10,7 @@ const cadeiras = [
     {
         cadeira: "283085589467648",
         turno: "SDis23L07",
-        required: 4,
+        required: 1,
     }
 ];
 
